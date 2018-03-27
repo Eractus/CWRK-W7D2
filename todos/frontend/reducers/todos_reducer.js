@@ -38,10 +38,12 @@ const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_TODOS:
       return action.todos;
+
     case RECEIVE_TODO:
       let newObj = Object.assign({}, action.todo);
       newState[newObj.id] = newObj;
       return newState;
+
     default:
       return state;
   }
